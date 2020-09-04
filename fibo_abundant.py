@@ -3,6 +3,8 @@ choice = input('Input f|a|b (fibonacci, abundant or both): ')
 if choice == 'f' or choice == 'b':
     #Fibonacci sequence
     length = int(input('Input the length of the sequence: '))
+    print('Fibonacci sequence:')
+    print('-------------------')
     first_no = 0
     second_no = 1
     print(first_no)
@@ -20,6 +22,8 @@ if choice == 'f' or choice == 'b':
 if choice == 'a' or choice == 'b':
     #Abundant numbers
     max_num = int(input('Input the max number to check: '))
+    print('Abundant numbers: ')
+    print('-----------------')
     proper_divisor_sum = 0
 
         
