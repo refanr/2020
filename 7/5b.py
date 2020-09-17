@@ -57,10 +57,14 @@ def move_many(how_many, from_pillar, to_pillar, state):
     Prints the state for every move made.
     """
     # ... implement this method
-    while how_many > 0:
-        state = move_one(1,3,state)
-        print(state)
-        how_many = find_index_of_nth_occurrence(state,'|',1)
+    state = move_one(from_pillar,to_pillar,state)
+    print(state)
+    how_many = find_index_of_nth_occurrence(state,'|',1)
+    if how_many > 0:
+        if int(state[-2]) < int(state[how_many-1]):
+            state = move_one(from_pillar,2,state)
+
+            move_many(how_many,from_pillar,to_pillar,state)
         
 
 
