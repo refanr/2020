@@ -21,7 +21,8 @@ def sum_natural(n_str):
     else:
         return None
     
-    print('Natural number sum:',sum)
+    print('Natural number sum:',sum,)
+    print()
 
 
 def sum_fibonacci(n_str):
@@ -38,7 +39,8 @@ def sum_fibonacci(n_str):
             first_num, second_num = second_num, current_num        
     else:
         return None
-    print('Fibonacci sum:',sum)
+    print('Fibonacci sum:',sum,)
+    print()
 
 
 def approximate_euler(n_str):
@@ -52,7 +54,8 @@ def approximate_euler(n_str):
     else:
         return None
 
-    print('Euler approximation:',round(approximation,5))
+    print('Euler approximation:',round(float(approximation),5),)
+    print()
 
 menu()
 option = ''
@@ -75,6 +78,8 @@ while option != 'x':
             sum_fibonacci(chosen_n)
         elif option == 'c':
             approximate_euler(chosen_n)
+    elif option == 'x':
+        break
     else:
         print('Unrecognized option ' + option)
         menu()
