@@ -25,12 +25,14 @@ def make_a_list(filename):
     except FileNotFoundError:
         print('File {} not found'.format(filename))
     for line in file_object:
-        tmp_list = line.split()
-        for elem in tmp_list:
-            temp_list.append(elem)
-    for elem in temp_list:
-        try:
-            int(elem)
+        temp_list.append(line.split())
+    
+    for i in range(len(temp_list[0])):
+        tup = (temp_list[0][i], float(temp_list[1][i]))
+        parts_list.append(tup)
+        
+    return parts_list
+
 
 
 
