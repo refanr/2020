@@ -1,0 +1,10 @@
+1	James	4735694	Mary	3265105
+2	John	4502387	Patricia	1560897
+3	Robert	4499901	Jennifer	1467664
+4	Michael	4330025	Linda	1448309
+5	William	3601719	Elizabeth	1428981
+6	David	3563170	Barbara	1402428
+7	Richard	2467544	Susan	1104407
+8	Joseph	2352889	Jessica	1045519
+9	Thomas	2160330	Sarah	993847
+10	Charles	2106078	Karen	985728
