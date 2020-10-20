@@ -1,3 +1,5 @@
+from typing import Dict
+
 RANK = "rank"
 NAME = "name"
 COUNTRY = "country"
@@ -45,7 +47,14 @@ def show_players_by_country(players) -> None:
         show_player_names_and_scores(country_players)
 
 def group_players_by_country(players: list) -> dict:
-    return {}
+    grouped_players: Dict[str, list] = {}
+    for player in players:
+        country = player[COUNTRY]
+        if country not in grouped_players:
+            grouped_players[country] = []
+        grouped_players[country].append(player)
+
+    return grouped_players
 
 def show_country_stats(country: str, players: list) -> None:
     pass
