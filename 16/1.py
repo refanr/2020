@@ -12,6 +12,7 @@ def main():
     
     players = read_player_data_from_csv(file_name)
     show_players_by_country(players)
+    show_players_by_year(players)
 
 
 def read_player_data_from_csv(file_name: str) -> list:
@@ -50,6 +51,16 @@ def show_players_by_country(players) -> None:
         show_country_stats(country, country_players)
         show_player_names_and_scores(country_players)
 
+def show_players_by_year(players) -> None:
+    print('Players by birth year:')
+    print('----------------------')
+    players_by_year = group_players_by_year(players)
+    sorted_years = sorted(players_by_year.keys())
+    for year in sorted_years:
+        year_players = players_by_year[year]
+        show_year_stats(year, year_players)
+        show_player_names_and_scores(year_players)
+
 
 def group_players_by_country(players: list) -> dict:
     grouped_players: Dict[str, list] = {}
@@ -61,10 +72,24 @@ def group_players_by_country(players: list) -> dict:
 
     return grouped_players
 
+def group_players_by_year(players: list) -> dict:
+    grouped_players: Dict[str, list] = {}
+    for player in players:
+        year = player[BIRTH_YEAR]
+        if year not in grouped_players:
+            grouped_players[year] = []
+        grouped_players[year].append(player)
+    
+    return grouped_players
+
 
 def show_country_stats(country: str, players: list) -> None:
     average_score = calculate_average_score(players)
-    print(f"{country} ({len(players)}) (){average_score:.1f}):")
+    print(f"{country} ({len(players)}) ({average_score:.1f}):")
+
+def show_year_stats(year: int, players: list) -> None:
+    average_score = calculate_average_score(players)
+    print(f"{year} ({len(players)}) ({average_score:.1f}):")
 
 
 def calculate_average_score(players: list) -> float:
@@ -74,7 +99,7 @@ def calculate_average_score(players: list) -> float:
 
 def show_player_names_and_scores(players: list) -> None:
     for player in players:
-        print(f"{player[NAME]:>40} {player[SCORE]:>10d}")
+        print(f"{player[NAME]:>40} {player[SCORE]:>10}")
 
 
 main()
