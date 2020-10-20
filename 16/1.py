@@ -1,7 +1,8 @@
-""" open the csv file, read the file, line by line and make some data struct 
-for each line, each player. 
-
-"""
+RANK = "rank"
+NAME = "name"
+COUNTRY = "country"
+SCORE = "score"
+BIRTH_YEAR = "birth_year"
 
 def main():
     file_name = input('Enter filename: ')
@@ -12,7 +13,9 @@ def read_player_data_from_csv(file_name: str):
     players = []
     with open(file_name) as file:
         for line in file:
-            player_dict = 
+            player_dict = parse_line(line) 
+    
+    return player_dict
     
     
 
