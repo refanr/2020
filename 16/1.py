@@ -34,7 +34,23 @@ def switch_last_and_first_names(name: str) -> str:
     last_name, first_name = name.split(', ')
     return f"{first_name} {last_name}" 
 
-def show_players_by_country(players):
+def show_players_by_country(players) -> None:
+    print('Players by country:')
+    print('-------------------')
+    players_by_country = group_players_by_country(players)
+    sorted_countries = sorted(players_by_country.keys())
+    for country in sorted_countries:
+        country_players = players_by_country[country]
+        show_country_stats(country, players_by_country)
+        show_player_names_and_scores(country_players)
+
+def group_players_by_country(players: list) -> dict:
+    return {}
+
+def show_country_stats(country: str, players: list) -> None:
+    pass
+
+def show_player_names_and_scores(players: list) -> None:
     pass
 
 main()
