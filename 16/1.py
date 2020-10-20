@@ -9,7 +9,12 @@ def main():
     show_players_by_country(players)
 
 def read_player_data_from_csv(file_name: str):
-    return []
+    players = []
+    with open(file_name) as file:
+        for line in file:
+            player_dict = 
+    
+    
 
 def show_players_by_country(players):
     pass
